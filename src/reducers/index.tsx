@@ -18,7 +18,7 @@ export function enthusiasm(state: StoreState, action: Actions): StoreState {
           ...incoming
         };
       }
-      return state
+      return state;
     default:
       return state;
   }
