@@ -1,4 +1,3 @@
-
 import * as constants from '../constants';
 
 export interface IncrementEnthusiasm {
@@ -9,7 +8,13 @@ export interface DecrementEnthusiasm {
     type: constants.DECREMENT_ENTHUSIASM;
 }
 
-export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm;
+export interface RehydrateAction {
+    // TODO why can't the imported REHYDRATE be used here?
+    type: 'persist/REHYDRATE';
+    payload: any;
+}
+
+export type Actions = IncrementEnthusiasm | DecrementEnthusiasm | RehydrateAction;
 
 export function incrementEnthusiasm(): IncrementEnthusiasm {
     return {
